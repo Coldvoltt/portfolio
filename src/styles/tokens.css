@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Design tokens
+
+   Dark is the default and the design's home. Light is a deliberate warm-paper
+   counterpart, not an inversion: the same gold accent, darkened enough to
+   carry text weight on a pale ground.
+
+   Every colour a component needs is a token here. Nothing in the component
+   sheets hardcodes a colour, which is what makes the theme switch total
+   rather than approximate.
+
+   Both palettes clear WCAG AA 4.5:1 for every text token on every surface
+   token; verified numerically, not by eye.
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* --- Surface ----------------------------------------------------------- */
+  --bg: #0c0b0a;
+  --bg-deep: #080706;
+  --surface: #121110;
+  --surface-2: #171614;
+  --surface-3: #1d1b19;
+
+  /* --- Line -------------------------------------------------------------- */
+  --line: rgba(237, 234, 227, 0.09);
+  --line-strong: rgba(237, 234, 227, 0.16);
+  --line-faint: rgba(237, 234, 227, 0.05);
+
+  /* --- Type -------------------------------------------------------------- */
+  --text: #edeae3;
+  --text-2: #a8a49b;
+  /* Small mono labels use this, so it clears 4.5:1 on every surface above,
+     not just the 3:1 large-text threshold. */
+  --text-3: #87837b;
+  --text-inverse: #0c0b0a;
+  /* The far end of the ramp, for a primary button's hover. */
+  --text-max: #ffffff;
+
+  /* --- Accent (restrained, single hue) ------------------------------------ */
+  --accent: #d9a441;
+  --accent-bright: #eebc60;
+  --accent-dim: rgba(217, 164, 65, 0.4);
+  /* Separator punctuation: quiet, but above the 3:1 non-text floor. */
+  --accent-mid: rgba(217, 164, 65, 0.72);
+  --accent-wash: rgba(217, 164, 65, 0.1);
+  --accent-wash-2: rgba(217, 164, 65, 0.05);
+
+  /* --- Status ------------------------------------------------------------- */
+  --live: #7bbf8a;
+  --live-wash: rgba(123, 191, 138, 0.12);
+  --danger: #e0806b;
+  --danger-line: rgba(224, 128, 107, 0.45);
+  --danger-wash: rgba(224, 128, 107, 0.1);
+
+  /* --- Effects ------------------------------------------------------------ */
+  --scrim: rgba(12, 11, 10, 0.78);
+  --hover-wash: rgba(237, 234, 227, 0.045);
+  --ring: rgba(255, 255, 255, 0.42);
+  --shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.5);
+  --shadow-pop: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --page-wash-top: rgba(217, 164, 65, 0.055);
+  --page-wash-bottom: rgba(8, 7, 6, 0.9);
+
+  /* --- Fonts -------------------------------------------------------------- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-hand: "Caveat", "Segoe Script", "Bradley Hand", cursive;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono",
+    Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* --- Scale (fluid) ------------------------------------------------------
+     Base is 17px, not 16: body copy needs the extra weight to read
+     comfortably, and it pulls the whole scale up with it. */
+  --step--2: 0.8125rem; /* 13px  mono labels, tags, hints */
+  --step--1: 0.9375rem; /* 15px  secondary copy, buttons */
+  --step-0: 1.0625rem; /* 17px  body */
+  --step-1: clamp(1.2rem, 0.24vw + 1.13rem, 1.375rem);
+  --step-2: clamp(1.45rem, 0.6vw + 1.3rem, 1.9rem);
+  --step-3: clamp(1.85rem, 1.15vw + 1.55rem, 2.6rem);
+  --step-4: clamp(2.25rem, 2.05vw + 1.75rem, 3.6rem);
+  --step-5: clamp(2.55rem, 3.15vw + 1.5rem, 4.4rem);
+
+  /* --- Space -------------------------------------------------------------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --sp-10: 8rem;
+
+  /* --- Layout ------------------------------------------------------------- */
+  --maxw: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --radius: 4px;
+  --radius-lg: 8px;
+
+  /* --- Motion -------------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 220ms;
+  --dur-slow: 620ms;
+}
+
+/* ==========================================================================
+   Light: warm paper, not white. The accent darkens to #7d5a0e so it can still
+   carry link and label text at 5.3:1 on the palest surface.
+   ========================================================================== */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #faf8f3;
+  --bg-deep: #f1eee6;
+  --surface: #ffffff;
+  --surface-2: #f6f3ec;
+  --surface-3: #efebe1;
+
+  --line: rgba(23, 21, 15, 0.13);
+  --line-strong: rgba(23, 21, 15, 0.24);
+  --line-faint: rgba(23, 21, 15, 0.07);
+
+  --text: #17150f;
+  --text-2: #4d4940;
+  --text-3: #635e54;
+  --text-inverse: #faf8f3;
+  --text-max: #000000;
+
+  --accent: #7d5a0e;
+  --accent-bright: #5e430a;
+  --accent-dim: rgba(125, 90, 14, 0.38);
+  --accent-mid: rgba(125, 90, 14, 0.62);
+  --accent-wash: rgba(125, 90, 14, 0.09);
+  --accent-wash-2: rgba(125, 90, 14, 0.05);
+
+  --live: #256b3d;
+  --live-wash: rgba(37, 107, 61, 0.1);
+  --danger: #a33418;
+  --danger-line: rgba(163, 52, 24, 0.4);
+  --danger-wash: rgba(163, 52, 24, 0.08);
+
+  --scrim: rgba(250, 248, 243, 0.82);
+  --hover-wash: rgba(23, 21, 15, 0.045);
+  --ring: rgba(23, 21, 15, 0.16);
+  --shadow-lg: 0 16px 40px rgba(23, 21, 15, 0.13);
+  --shadow-pop: 0 12px 28px rgba(23, 21, 15, 0.16);
+  --page-wash-top: rgba(125, 90, 14, 0.05);
+  --page-wash-bottom: rgba(241, 238, 230, 0.9);
+}
+
+/* The theme swap itself is animated, so switching does not strobe. Individual
+   components keep their own faster transitions. */
+:root.theme-switching,
+:root.theme-switching body {
+  transition: background-color 260ms var(--ease), color 260ms var(--ease);
+}
