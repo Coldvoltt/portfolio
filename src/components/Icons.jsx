@@ -142,3 +142,9 @@ export const Lock = (p) => (
     <path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" />
   </svg>
 );
+
+export const BookOpen = (p) => (
+  <svg {...base} className="ico" {...p}>
+    <path d="M2 3.5h4a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 0 6 10.5H2zM14 3.5h-4A2.5 2.5 0 0 0 7.5 6v7A2.5 2.5 0 0 1 10 10.5h4z" />
+  </svg>
+);

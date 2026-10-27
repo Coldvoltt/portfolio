@@ -5,7 +5,7 @@ export default function Approach() {
   return (
     <Section
       id="approach"
-      index="05"
+      index="06"
       kicker="Approach"
       title={approach.heading}
       sub={approach.sub}

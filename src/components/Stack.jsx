@@ -6,7 +6,7 @@ export default function Stack() {
   return (
     <Section
       id="stack"
-      index="04"
+      index="05"
       kicker="Stack"
       title="Technologies I actually work with."
       sub="Organised by what they do, not by how impressive the list looks."

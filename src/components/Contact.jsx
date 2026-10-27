@@ -3,9 +3,9 @@ import { Mail, GitHub, LinkedIn, Download } from "./Icons.jsx";
 
 export default function Contact() {
   const mailto = `mailto:${site.email}?subject=${encodeURIComponent(contact.subject)}`;
-  // The GitHub section (07) only renders when a profile URL is configured,
+  // The GitHub section (08) only renders when a profile URL is configured,
   // so the contact section takes its number when it is absent.
-  const index = site.links.github ? "08" : "07";
+  const index = site.links.github ? "09" : "08";
 
   return (
     <section id="contact" className="section contact">

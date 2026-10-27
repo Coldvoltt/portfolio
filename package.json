@@ -9,7 +9,7 @@
     "build": "vite build && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "lint": "echo \"no linter configured\"",
-    "test": "node scripts/test-store.mjs"
+    "test": "node scripts/test-store.mjs && node scripts/test-blog.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

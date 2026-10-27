@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <Section
       id="experience"
-      index="06"
+      index="07"
       kicker="Experience"
       title="What I've built, where."
       sub={`${site.experienceYears} years across AI engineering, backend development, and data work.`}

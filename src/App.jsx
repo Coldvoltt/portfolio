@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound.jsx";
 /* Admin and the case-study page are split out of the initial bundle — a
    recruiter landing on the homepage never downloads them. */
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail.jsx"));
+const BlogList = lazy(() => import("./pages/BlogList.jsx"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail.jsx"));
 const Admin = lazy(() => import("./pages/Admin.jsx"));
 
 export default function App() {
@@ -26,6 +28,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

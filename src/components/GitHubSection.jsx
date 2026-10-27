@@ -16,7 +16,7 @@ export default function GitHubSection() {
   return (
     <Section
       id="github"
-      index="07"
+      index="08"
       kicker="GitHub"
       title={githubSection.heading}
       sub={githubSection.body}

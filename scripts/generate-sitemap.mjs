@@ -13,6 +13,7 @@ const load = (rel) => import(pathToFileURL(resolve(root, rel)).href);
 
 const { site } = await load("src/data/site.js");
 const { seedProjects } = await load("src/data/projects.js");
+const { blogs } = await load("src/data/blogs.js");
 
 const base = (site.url || "").replace(/\/$/, "");
 
@@ -27,10 +28,16 @@ const today = new Date().toISOString().slice(0, 10);
 
 const urls = [
   { loc: "/", priority: "1.0", changefreq: "monthly" },
+  { loc: "/blog", priority: "0.9", changefreq: "weekly" },
   ...seedProjects.map((p) => ({
     loc: `/projects/${p.slug}`,
     priority: "0.8",
     changefreq: "yearly",
+  })),
+  ...blogs.map((b) => ({
+    loc: `/blog/${b.slug}`,
+    priority: "0.8",
+    changefreq: "monthly",
   })),
 ];
 

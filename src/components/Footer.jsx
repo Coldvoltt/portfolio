@@ -16,6 +16,7 @@ export default function Footer() {
         </div>
 
         <nav className="footer__links" aria-label="Footer">
+          <Link to="/blog">Articles</Link>
           <a href={`mailto:${site.email}`}>
             <Mail /> Email
           </a>

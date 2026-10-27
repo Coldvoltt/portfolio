@@ -4,6 +4,7 @@ import Hero from "../components/Hero.jsx";
 import About from "../components/About.jsx";
 import Capabilities from "../components/Capabilities.jsx";
 import Projects from "../components/Projects.jsx";
+import BlogSection from "../components/BlogSection.jsx";
 import Stack from "../components/Stack.jsx";
 import Approach from "../components/Approach.jsx";
 import Experience from "../components/Experience.jsx";
@@ -42,6 +43,7 @@ export default function Home() {
       <About />
       <Capabilities />
       <Projects />
+      <BlogSection />
       <Stack />
       <Approach />
       <Experience />
